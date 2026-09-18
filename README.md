@@ -77,8 +77,14 @@ Verify it loaded, and confirm it adds nothing to your context:
 ```bash
 claude plugin details auto-skills
 #   Hooks (1)  SessionEnd  (harness-only — no model context cost)
-#   Always-on:   ~0 tok   added to every session
+#   Always-on:  ~100 tok   added to every session
 ```
+
+The hook itself costs nothing — it runs in the harness, not the model's context.
+The ~100 tokens are the three slash-command descriptions. That is the plugin's
+own standing cost, and it is held deliberately low: marking the commands
+`disable-model-invocation` would remove the cost entirely but also stops them
+being typable, which is a worse trade.
 
 It ships in **`dry-run`** mode: it reviews sessions and stages proposals under
 `$CLAUDE_PLUGIN_DATA/pending/` without writing any skill. Run it that way for a
@@ -148,7 +154,23 @@ version is kept under the skill's `.versions/` directory.
 - **It can capture a belief the session later refuted.** A long session contains
   wrong turns; a claim made confidently early and corrected later may survive
   into a draft. The prompt has rules for this and they help, but they do not
-  eliminate it. This is the main reason to stay in `dry-run` at first.
+  eliminate it. The eval measures exactly this: `refuted-mid-session` is the one
+  case that flips between runs. This is the main reason to stay in `dry-run`
+  at first.
+
+### Measured baseline
+
+`python3 evals/run_eval.py --runs 2` on Haiku, at the commit that added the
+supersession rule:
+
+```
+15/16 across 8 cases x 2 runs
+SKIP precision (the bar that matters): 11/12
+~   refuted-mid-session   expect=SKIP   1/2   ['SKIP', 'PROPOSE']
+```
+
+Every other case is stable across runs. Re-run this before and after any change
+to `prompts/review.sys.md`.
 - The reviewer runs on your Claude Code subscription, not a separate API key.
 
 ## Credit
