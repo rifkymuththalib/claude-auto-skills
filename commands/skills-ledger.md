@@ -1,5 +1,6 @@
 ---
 description: Show which skills auto-skills has learned, how often each is used, and what the catalogue costs per turn.
+disable-model-invocation: true
 ---
 
 Run `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/evict.py"` and show the user the table it
