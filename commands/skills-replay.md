@@ -1,7 +1,6 @@
 ---
-description: Re-run the auto-skills reviewer over a past session transcript, without waiting for a session to end.
+description: Re-run the auto-skills reviewer over a past session transcript.
 argument-hint: [transcript.jsonl]
-disable-model-invocation: true
 ---
 
 Re-run the reviewer over a finished session. If `$1` is empty, list the largest recent

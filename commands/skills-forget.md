@@ -1,7 +1,6 @@
 ---
-description: Remove a skill that auto-skills created, along with its ledger entry.
+description: Remove a skill auto-skills created.
 argument-hint: <skill-name>
-disable-model-invocation: true
 ---
 
 Remove the auto-generated skill named `$1`.

@@ -1,6 +1,6 @@
 {
   "name": "auto-skills",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Learns reusable procedures from finished Claude Code sessions and writes them as validated SKILL.md files.",
   "author": {
     "name": "Rifky"
