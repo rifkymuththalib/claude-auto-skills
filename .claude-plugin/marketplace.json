@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "rifky-local",
+  "description": "Local plugins developed on this machine.",
+  "owner": { "name": "Rifky" },
+  "plugins": [
+    {
+      "name": "auto-skills",
+      "description": "Learns reusable procedures from finished Claude Code sessions and writes them as validated SKILL.md files.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
