@@ -57,9 +57,16 @@ Three constraints shape it, all found by measurement rather than assumption:
 Requires Claude Code and Python 3.10+.
 
 ```bash
+claude plugin marketplace add rifkymuththalib/claude-auto-skills
+claude plugin install auto-skills@rifky-plugins
+```
+
+Or from a local clone, if you want to modify it:
+
+```bash
 git clone https://github.com/rifkymuththalib/claude-auto-skills.git
 claude plugin marketplace add ./claude-auto-skills
-claude plugin install auto-skills@rifky-local
+claude plugin install auto-skills@rifky-plugins
 ```
 
 `--plugin-dir` also works for a single session, but a marketplace install is what
@@ -79,7 +86,7 @@ week and read what it would have created before turning it loose.
 
 ```bash
 # when you are satisfied with what it proposes
-echo '{"mode": "auto"}' > ~/.claude/plugins/data/auto-skills-rifky-local/config.json
+echo '{"mode": "auto"}' > ~/.claude/plugins/data/auto-skills-rifky-plugins/config.json
 ```
 
 ## Configuration

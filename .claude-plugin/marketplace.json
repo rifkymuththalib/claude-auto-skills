@@ -1,8 +1,10 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "rifky-local",
-  "description": "Local plugins developed on this machine.",
-  "owner": { "name": "Rifky" },
+  "name": "rifky-plugins",
+  "description": "Plugins by Rifky Muththalib.",
+  "owner": {
+    "name": "Rifky"
+  },
   "plugins": [
     {
       "name": "auto-skills",
