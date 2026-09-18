@@ -1,8 +1,15 @@
 {
   "name": "auto-skills",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Learns reusable procedures from finished Claude Code sessions and writes them as validated SKILL.md files.",
-  "author": { "name": "Rifky" },
+  "author": {
+    "name": "Rifky"
+  },
   "license": "MIT",
-  "keywords": ["claude-code", "skills", "self-improvement", "hooks"]
+  "keywords": [
+    "claude-code",
+    "skills",
+    "self-improvement",
+    "hooks"
+  ]
 }
